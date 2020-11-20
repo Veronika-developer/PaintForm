@@ -21,7 +21,7 @@ namespace PaintApp
         GraphicsPath currentPath;
         Point oldLocation;
         public static Pen currentPen;
-        Color historyColor;//сохранение текущего цвета перед использованием ластика
+        public static Color historyColor = Color.Black;//сохранение текущего цвета перед использованием ластика
         List<Image> History;//список для истории
         int X = 0;
         int Y = 0;
@@ -110,6 +110,7 @@ namespace PaintApp
                 draw = true;
                 oldLocation = e.Location;
                 currentPath = new GraphicsPath();
+                currentPen.Color = historyColor;
             }
             if (e.Button == MouseButtons.Right)
             {
@@ -123,8 +124,6 @@ namespace PaintApp
 
         private void NEWtoolStripButton6_Click(object sender, EventArgs e)
         {
-            Bitmap pic = new Bitmap(706, 410);
-            picDrawingSurface.Image = pic;
 
             if (picDrawingSurface.Image != null)
             {
@@ -137,6 +136,11 @@ namespace PaintApp
                     case DialogResult.Cancel: return;
                 }
 
+            }
+            else
+            {
+                Bitmap pic = new Bitmap(706, 410);
+                picDrawingSurface.Image = pic;
             }
         }
 
@@ -192,12 +196,18 @@ namespace PaintApp
 
         private void EXITtoolStripButton10_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы точно хотите выйти?", "Передупреждение", MessageBoxButtons.YesNoCancel);
+            if (picDrawingSurface.Image != null) { 
+                var result = MessageBox.Show("Вы точно хотите выйти?", "Передупреждение", MessageBoxButtons.YesNoCancel);
             switch (result)
             {
                 case DialogResult.No: return;
                 case DialogResult.Yes: this.Close(); break;
                 case DialogResult.Cancel: return;
+            }
+            }
+            else
+            {
+                this.Close();
             }
         }
 
@@ -282,6 +292,29 @@ namespace PaintApp
         private void Lupa_Scroll(object sender, EventArgs e)
         {
             picDrawingSurface.Image = Zoom(imgOriginal, Lupa.Value);
+        }
+
+        private void COLORtoolStripButton9_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            COLORtoolStripButton9_Click(sender,e);
+        }
+
+        private void picDrawingSurface_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+            g.Clear(Color.White);
+            History.Add(new Bitmap(picDrawingSurface.Image));
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Создатель: Вероника Ефимова TARpv19","Информация о разработчике");
         }
     }
 }
