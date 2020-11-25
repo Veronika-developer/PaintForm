@@ -19,3 +19,14 @@ C:\Users\opilane\source\repos\Jefimova\paint\obj\Debug\PaintApp.csproj.GenerateR
 C:\Users\opilane\source\repos\Jefimova\paint\obj\Debug\PaintApp.csproj.CoreCompileInputs.cache
 C:\Users\opilane\source\repos\Jefimova\paint\obj\Debug\PaintApp.exe
 C:\Users\opilane\source\repos\Jefimova\paint\obj\Debug\PaintApp.pdb
+C:\Users\opilane\source\repos\Jefimova\paintform\bin\Debug\PaintApp.exe.config
+C:\Users\opilane\source\repos\Jefimova\paintform\bin\Debug\PaintApp.exe
+C:\Users\opilane\source\repos\Jefimova\paintform\bin\Debug\PaintApp.pdb
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.csprojAssemblyReference.cache
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.Form1.resources
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.Form2.resources
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.Properties.Resources.resources
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.csproj.GenerateResource.cache
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.csproj.CoreCompileInputs.cache
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.exe
+C:\Users\opilane\source\repos\Jefimova\paintform\obj\Debug\PaintApp.pdb

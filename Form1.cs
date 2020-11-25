@@ -135,7 +135,8 @@ namespace PaintApp
                     case DialogResult.Yes: SAVEtoolStripButton_Click(sender, e); break;
                     case DialogResult.Cancel: return;
                 }
-
+                Bitmap pic = new Bitmap(706, 410);
+                picDrawingSurface.Image = pic;
             }
             else
             {
@@ -308,8 +309,16 @@ namespace PaintApp
         private void picDrawingSurface_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-            g.Clear(Color.White);
-            History.Add(new Bitmap(picDrawingSurface.Image));
+            if (e.Button == MouseButtons.Left)
+            {
+                g.Clear(historyColor);
+                History.Add(new Bitmap(picDrawingSurface.Image));
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                g.Clear(Color.White);
+                History.Add(new Bitmap(picDrawingSurface.Image));
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
