@@ -27,7 +27,7 @@ namespace PaintApp
         int Y = 0;
         int X0 = 0;
         int Y0 = 0;
-        int figuri = 0;
+        int figura = 0;
         public Form1()
         {
             InitializeComponent();
@@ -46,17 +46,6 @@ namespace PaintApp
                 Graphics g = Graphics.FromImage(picDrawingSurface.Image);
 
                 currentPath.AddLine(oldLocation, e.Location);
-                g.DrawPath(currentPen, currentPath);
-                oldLocation = e.Location;
-                g.Dispose();
-                picDrawingSurface.Invalidate();
-
-            }
-            else
-            {
-                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-                Rectangle pathRect = new Rectangle(X, Y, X0, Y0);
-                currentPath.AddRectangle(pathRect);
                 g.DrawPath(currentPen, currentPath);
                 oldLocation = e.Location;
                 g.Dispose();
@@ -171,15 +160,13 @@ namespace PaintApp
                         this.picDrawingSurface.Image.Save(fs, ImageFormat.Gif);
                         break;
                     case 4:
+                        picDrawingSurface.BackColor = Color.Transparent;
                         this.picDrawingSurface.Image.Save(fs, ImageFormat.Png);
                         break;
                 }
 
                 fs.Close();
             }
-            Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-            g.Clear(Color.White);
-            g.DrawImage(picDrawingSurface.Image, 0, 0, 750, 500);
         }
 
         private void OPENtoolStripButton8_Click(object sender, EventArgs e)
@@ -191,18 +178,16 @@ namespace PaintApp
 
             if (OP.ShowDialog() != DialogResult.Cancel)
                 picDrawingSurface.Load(OP.FileName);
-
-            picDrawingSurface.AutoSize = true;
         }
 
         private void EXITtoolStripButton10_Click(object sender, EventArgs e)
         {
             if (picDrawingSurface.Image != null) { 
-                var result = MessageBox.Show("Вы точно хотите выйти?", "Передупреждение", MessageBoxButtons.YesNoCancel);
+                var result = MessageBox.Show("Сохранить текущее изображение перед созданием нового рисунка?", "Предупреждение", MessageBoxButtons.YesNoCancel);
             switch (result)
             {
                 case DialogResult.No: return;
-                case DialogResult.Yes: this.Close(); break;
+                case DialogResult.Yes: SAVEtoolStripButton_Click(sender,e); this.Close();break;
                 case DialogResult.Cancel: return;
             }
             }
@@ -292,6 +277,7 @@ namespace PaintApp
 
         private void Lupa_Scroll(object sender, EventArgs e)
         {
+            imgOriginal = picDrawingSurface.Image;
             picDrawingSurface.Image = Zoom(imgOriginal, Lupa.Value);
         }
 
@@ -316,7 +302,8 @@ namespace PaintApp
             }
             if (e.Button == MouseButtons.Right)
             {
-                g.Clear(Color.White);
+                Bitmap pic = new Bitmap(706, 410);
+                picDrawingSurface.Image = pic;
                 History.Add(new Bitmap(picDrawingSurface.Image));
             }
         }

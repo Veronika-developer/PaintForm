@@ -24,6 +24,8 @@ namespace PaintApp
             REDnumericUpDown1.Tag = RedScrollBar1;
             GREENnumericUpDown2.Tag = GreenhScrollBar3;
             BLUEnumericUpDown3.Tag = BluehScrollBar2;
+
+            ColorPictureBox();
         }
 
         private void RedScrollBar1_Scroll(object sender, ScrollEventArgs e)

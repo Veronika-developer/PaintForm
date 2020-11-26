@@ -60,17 +60,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LBLxy = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RazmerKisti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Lupa)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
             // 
-            this.menuStrip2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip2.BackColor = System.Drawing.Color.LightGray;
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -79,7 +81,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(866, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(852, 24);
             this.menuStrip2.TabIndex = 16;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -246,7 +248,7 @@
             this.EXITtoolStripButton10});
             this.toolStrip2.Location = new System.Drawing.Point(0, 24);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(111, 510);
+            this.toolStrip2.Size = new System.Drawing.Size(111, 522);
             this.toolStrip2.TabIndex = 20;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -314,7 +316,7 @@
             // 
             this.picDrawingSurface.BackColor = System.Drawing.Color.White;
             this.picDrawingSurface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picDrawingSurface.Location = new System.Drawing.Point(19, 18);
+            this.picDrawingSurface.Location = new System.Drawing.Point(12, 18);
             this.picDrawingSurface.Name = "picDrawingSurface";
             this.picDrawingSurface.Size = new System.Drawing.Size(706, 410);
             this.picDrawingSurface.TabIndex = 21;
@@ -326,7 +328,7 @@
             // 
             // RazmerKisti
             // 
-            this.RazmerKisti.Location = new System.Drawing.Point(98, 434);
+            this.RazmerKisti.Location = new System.Drawing.Point(139, 16);
             this.RazmerKisti.Name = "RazmerKisti";
             this.RazmerKisti.Size = new System.Drawing.Size(287, 45);
             this.RazmerKisti.TabIndex = 22;
@@ -334,7 +336,7 @@
             // 
             // Lupa
             // 
-            this.Lupa.Location = new System.Drawing.Point(391, 434);
+            this.Lupa.Location = new System.Drawing.Point(432, 16);
             this.Lupa.Name = "Lupa";
             this.Lupa.Size = new System.Drawing.Size(287, 45);
             this.Lupa.TabIndex = 23;
@@ -343,7 +345,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(520, 466);
+            this.label3.Location = new System.Drawing.Point(569, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 25;
@@ -352,7 +354,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 466);
+            this.label2.Location = new System.Drawing.Point(238, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 26;
@@ -361,7 +363,7 @@
             // LBLxy
             // 
             this.LBLxy.AutoSize = true;
-            this.LBLxy.Location = new System.Drawing.Point(16, 456);
+            this.LBLxy.Location = new System.Drawing.Point(43, 33);
             this.LBLxy.Name = "LBLxy";
             this.LBLxy.Size = new System.Drawing.Size(22, 13);
             this.LBLxy.TabIndex = 27;
@@ -370,21 +372,29 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.picDrawingSurface);
-            this.panel1.Controls.Add(this.LBLxy);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Lupa);
-            this.panel1.Controls.Add(this.RazmerKisti);
             this.panel1.Location = new System.Drawing.Point(114, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 507);
+            this.panel1.Size = new System.Drawing.Size(731, 437);
             this.panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.LBLxy);
+            this.panel2.Controls.Add(this.Lupa);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.RazmerKisti);
+            this.panel2.Location = new System.Drawing.Point(119, 467);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(726, 74);
+            this.panel2.TabIndex = 29;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 534);
+            this.ClientSize = new System.Drawing.Size(852, 546);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.panel1);
@@ -400,7 +410,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.RazmerKisti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Lupa)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,6 +450,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LBLxy;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
